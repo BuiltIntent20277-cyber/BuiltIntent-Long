@@ -13,15 +13,15 @@ pexels_key = os.environ.get('PEXELS_API_KEY')
 chat_id = os.environ.get('CHAT_ID')
 telegram_token = os.environ.get('TELEGRAM_BOT_TOKEN')
 
-# 👇 USA Channel Name (Updated for Hidden Industries) 👇
-channel_name = "Hidden Industries®" 
+# 👇 USA Channel Name (Updated for Built Intent) 👇
+channel_name = "Built Intent®" 
 
 print(f"DEBUG: Processing {len(scenes_data)} scenes async...")
 
 # --- SMART DYNAMIC FALLBACK KEYWORDS ---
 # GitHub Actions se jo bhi fallback theme aayegi, yeh usey list mein badal dega.
-# Updated default fallback keywords for Hidden Industries theme
-fallback_env = os.environ.get('FALLBACK_KEYWORDS', 'factory, warehouse, data center, global shipping, cargo ship, assembly line, industrial, modern business, logistics')
+# Updated default fallback keywords for Built Intent (Engineered Spaces) theme
+fallback_env = os.environ.get('FALLBACK_KEYWORDS', 'escalator moving, airport terminal, hotel hallway, subway train, highway night, glass lobby, parking garage, modern architecture, neon corridor')
 FALLBACK_KEYWORDS = [kw.strip() for kw in fallback_env.split(',')]
 
 TEMP_DIR = "/dev/shm" if os.path.exists("/dev/shm") else os.getcwd()
@@ -217,8 +217,8 @@ async def main_pipeline():
         run_id = os.environ.get('GITHUB_RUN_ID', str(int(time.time())))
         tag_name = f"vid-{run_id}"
         
-        # 👇 Repo name updated for Hidden Industries based on your screenshot 👇
-        repo_name = os.environ.get('GITHUB_REPOSITORY', "HiddenIndustries-a11y/Hidden-Industries-Long") 
+        # 👇 Repo name updated for Built Intent based on your screenshot 👇
+        repo_name = os.environ.get('GITHUB_REPOSITORY', "BuiltIntent20277-cyber/BuiltIntent-Long") 
         
         try:
             cmd = ['gh', 'release', 'create', tag_name, final_video, '--repo', repo_name, '--notes', 'Automated Video Render']
