@@ -1,4 +1,4 @@
-name: Auto Render Hidden Industries Video
+name: Auto Render Built Intent Video
 
 on:
   repository_dispatch:
